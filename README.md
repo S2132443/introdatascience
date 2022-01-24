@@ -32,7 +32,7 @@ This app recommends movies based on the users' preferred genre, actors and direc
 - Press Search and the app will filter the dataset to find movie with the related input and show it in a table.
 - The app will list the movies according to the highest IMDB ratings and Metascores
 
-![app](gambar2.jpg)
+![app](https://github.com/S2132443/introdatascience/blob/main/gambar2.jpg)
 
 
 
@@ -40,7 +40,7 @@ Sample Display of the App
 ========================================================
 The user will be recommended movie titles based on their preferences and can view their posters
 
-![app](gambar1.jpg)
+![app](https://github.com/S2132443/introdatascience/blob/main/gambar1.jpg)
 
 Try The App Now
 ========================================================
