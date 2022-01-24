@@ -8,7 +8,6 @@ author: The Movie Runners
 - Irfan Syafiq bin Mohd Azli
 - Muhammad Abdullah Zaki bin Mohd Fauzan
 
-Date:  "`r format(Sys.time(), '%d %B %Y')`"
 
 INTRODUCTION
 ========================================================
