@@ -52,7 +52,7 @@ Due to our lacking knowledge in machine learning and the limited dataset, the pr
 Although it was tough managing our time, we learned a lot of new things about how R programming can be implemented and the potential projects that can be achieved with the language.
 
 The IMDB Movie Recommender can be accessed at:[https://s2132443.shinyapps.io/The_IMDB_Movie_Recommender/] 
-The Github link for our code is at:[]
+The Github link for our code is at:[https://github.com/S2132443/introdatascience]
 
 Hope you enjoy this presentation. Thank you.
 
