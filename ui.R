@@ -4,7 +4,7 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 
-IMDB <- read.csv("./Data/imdb_top_1000.csv")
+IMDB <- read.csv("./Data/imdb_top_1000_clean.csv")
 poster <- as.data.frame((str_c('<img src="',IMDB$Poster_Link, '"height="150"></img>')), stringsAsFactors=FALSE)
 IMDB <- cbind(IMDB, poster)
 names(IMDB)[17] <- 'IMG_Poster'
