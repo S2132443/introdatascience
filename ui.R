@@ -25,59 +25,83 @@ directors <- directors %>% unique
 names(directors)[1] <- 'Directors'
 
 shinyUI(fluidPage(
+  
+  
+  
   tags$style('.container-fluid {
-                             background-color: 	#f5de50;
-              }'),
+                             background-color:  #f5de50;
+              }',
+             'body {
+                background-color:  #f5de50;
+              }'
+  ),
   
   
   # Application title
-  titlePanel(h1("The IMDB Movie Recommender")),
   
-  
-  fluidRow(
-    column(4, h4("Enter or search your preferred genre:"),
-           wellPanel(
-             selectizeInput(
-               "genres", 
-               "Genre:", 
-               choices = genres, 
-               multiple = TRUE, 
-               options = list(maxItems = 1)
-             ),
-             tags$style(".well {background-color:	#6d6d6d;}"),
+  navbarPage("The IMDB Movie Recommender",
+             tabPanel("About",
+                      fluidRow(
+                        
+                               h2("Welcome to The IMDB Movie Recommender"),
+                               p("This app takes the users input and recommends movies based on what the user is looking for."),
+                               h3("How to use:"),
+                               h4("Step 1: Go to the app panel to access the app"),
+                               h4("Step 2: Choose what genre, actor or director you prefer from the drop down tabs"),
+                               h4("Step 3: Tick the categories you wish to use for your recommendation in the checkboxes"),
+                               h4("Step 4: Hit the search button and the app will recommend movies based on your preferences sorted by the highest IMDB rating and Metascore")
+                               
+                        )),
              
-           )),
-    
-    column(4, h4("Enter or search your preferred actor/actress:"),
-           wellPanel(
-             selectizeInput(
-               "actors", 
-               "Actor:", 
-               choices = actors, 
-               multiple = TRUE, 
-               options = list(maxItems = 1)
-             ) 
-           )),
-    
-    column(4, h4("Enter or search your preferred movie director:"),
-           wellPanel(
-             selectizeInput(
-               "directors", 
-               "Director:", 
-               choices = directors, 
-               multiple = TRUE, 
-               options = list(maxItems = 1)
-             ) 
-           )),
-    column(1, checkboxGroupInput("check", "Choose category:", choices = c("Genre", "Actor", "Director"),
-    ),
-    actionButton("go","SEARCH", icon("search"),class = "btn-primary")
-    ),
-    verbatimTextOutput("text"),
-    DT::dataTableOutput("table")
-    
-    
+             
+             tabPanel( "App",
+                       fluidRow(
+                         column(4, h4("Enter or search your preferred genre:"),
+                                wellPanel(
+                                  selectizeInput(
+                                    "genres",
+                                    "Genre:",
+                                    choices = genres,
+                                    multiple = TRUE,
+                                    options = list(maxItems = 1)
+                                  ),
+                                  tags$style(".well {background-color: #6d6d6d;}"),
+                                  
+                                )),
+                         
+                         column(4, h4("Enter or search your preferred actor/actress:"),
+                                wellPanel(
+                                  selectizeInput(
+                                    "actors",
+                                    "Actor:",
+                                    choices = actors,
+                                    multiple = TRUE,
+                                    options = list(maxItems = 1)
+                                  )
+                                )),
+                         
+                         column(4, h4("Enter or search your preferred movie director:"),
+                                wellPanel(
+                                  selectizeInput(
+                                    "directors",
+                                    "Director:",
+                                    choices = directors,
+                                    multiple = TRUE,
+                                    options = list(maxItems = 1)
+                                  )
+                                )),
+                         column(1, checkboxGroupInput("check", "Choose category:", choices = c("Genre", "Actor", "Director"),
+                         ),
+                         actionButton("go","SEARCH", icon("search"),class = "btn-primary")
+                         ),
+                         verbatimTextOutput("text"),
+                         DT::dataTableOutput("table"),
+                         
+                         
+                       )
+             ),
+             
+             
   )
 )
 )
-
